@@ -4,9 +4,19 @@ An analysis of tool mentions in federal job postings from 2017 to 2026, using th
 
 ![Python vs BI tools in federal job postings](results/tool_trends.png)
 
-## Data source
+## Dataset
 
-The dataset is queried directly from HuggingFace as monthly parquet files via DuckDB's `httpfs` extension — no local download required. The datasets-server API returns all parquet URLs:
+[`loyoladatamining/usajobs`](https://huggingface.co/datasets/loyoladatamining/usajobs) contains ~3M federal job postings scraped from USAJOBS, organized as monthly parquet splits (`2017_01` through `2026_03`). Each row has three fields:
+
+| Field | Description |
+|-------|-------------|
+| `usajobsControlNumber` | USAJOBS control number (unique per posting) |
+| `title` | Job title |
+| `text` | Full scraped posting text — summary, duties, qualifications, requirements, how to apply |
+
+The `text` field is the concatenated job announcement page. It typically runs several thousand characters and includes the structured sections you'd see on USAJOBS.
+
+The dataset is queried directly from HuggingFace as parquet files via DuckDB's `httpfs` extension — no local download required. The datasets-server API returns all parquet URLs:
 
 ```
 https://datasets-server.huggingface.co/parquet?dataset=loyoladatamining/usajobs
