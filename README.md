@@ -1,6 +1,6 @@
 # usajobs-tool-trends
 
-An analysis of tool mentions in federal job postings from 2017 to 2026, using the [`loyoladatamining/usajobs`](https://huggingface.co/datasets/loyoladatamining/usajobs) dataset (~3M postings).
+An example of what you can do with the [`loyoladatamining/usajobs`](https://huggingface.co/datasets/loyoladatamining/usajobs) dataset (~3M federal job postings, 2017–2026): tracking tool mentions over time without downloading anything locally.
 
 ![Python vs BI tools in federal job postings](results/tool_trends.png)
 
