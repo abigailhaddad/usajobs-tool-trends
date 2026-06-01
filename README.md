@@ -12,7 +12,7 @@ The dataset is queried directly from HuggingFace as monthly parquet files via Du
 https://datasets-server.huggingface.co/parquet?dataset=loyoladatamining/usajobs
 ```
 
-Each file is queried with `read_parquet(url)` over HTTP. A HuggingFace token speeds things up but isn't required.
+Each file is queried with `read_parquet(url)` over HTTP. No token required — the dataset is public.
 
 ## Methodology
 
@@ -36,4 +36,4 @@ python fetch_data.py
 python make_chart.py
 ```
 
-Set `HF_TOKEN` in your environment or a `.env` file to authenticate.
+A `HF_TOKEN` in your environment or a `.env` file will be used if present, but isn't required.
