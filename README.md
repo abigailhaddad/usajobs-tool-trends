@@ -30,6 +30,13 @@ Tool mentions are counted with `regexp_matches` in DuckDB, one parquet file at a
 
 The chart uses a 3-month rolling average to smooth monthly noise.
 
+The counts are of postings (one per control number), not positions, and they
+are raw counts, not shares of all postings. Postings an agency later canceled
+are included. That share grew over the period: "Job canceled" was 9.4% of the
+USAJOBS announcements opened in 2017 and 21.7% of those opened in 2025 (USAJOBS
+Historical API, as of 2026-11-01), so later years' counts include more postings
+that never filled anyone.
+
 ## Running it
 
 Pre-run results are in `results/` so you can go straight to the chart:
